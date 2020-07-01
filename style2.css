@@ -7,31 +7,35 @@
 }
 
 body {
-  background-color: #484545;
   font-family: "Montserrat", sans-serif;
+  background: #484545;
+  overflow-x: hidden;
 }
 
 .nav-header {
+  position: relative; /*goes up than position fixed*/
+  z-index: 2;
+
   min-height: 10vh;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 0;
 }
 
 #logo {
+  font-family: "Abril fatface";
   color: white;
-  font-family: "Abril Fatface";
+  font-size: 2rem;
 }
 
-.line {
+.line1,
+.line2 {
   width: 3rem;
   height: 0.2rem;
-  margin: 0.4rem;
+  margin: 0.4rem 0.4rem;
   background-color: white;
   pointer-events: none;
 }
@@ -41,22 +45,21 @@ body {
 }
 
 .slide {
-  min-height: 100vh;
-  width: 90%;
-  margin: 0 auto 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  color: white;
-  background-color: #484545;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 .hero-image {
   position: relative;
 
-  flex-basis: 25rem;
+  flex-basis: 25rem; /*flex basis 지정후에 flex 값을 줘야된다. 안그러면 flex basis 값 지정 안된다*/
   flex: 1;
+
+  overflow: hidden;
 }
 
 .hero-image img {
@@ -68,19 +71,22 @@ body {
 .hero-desc {
   position: relative;
 
+  flex-basis: 25rem;
+  flex: 1;
+
+  padding-left: 5rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 25rem;
-  flex: 1;
-  padding-left: 5rem;
 }
 
 .title {
   align-self: flex-start;
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Abril fatface";
   font-size: 2rem;
+  color: white;
 }
 
 .mountain-span {
@@ -99,21 +105,21 @@ body {
 }
 
 .hero-desc p {
-  padding: 2rem 0;
-  font-size: 1rem;
   color: #dfdfdf;
+  padding-top: 1.5rem;
+  font-size: 1rem;
 }
 
 .explore {
+  margin-top: 1.5rem;
   padding: 1rem 2rem;
-  background: none;
   border: none;
   color: white;
   text-decoration: none;
   border: 1px solid white;
-  cursor: pointer;
   font-size: 0.8rem;
 
+  cursor: pointer;
   align-self: flex-start;
 }
 
@@ -125,11 +131,11 @@ body {
   width: 100%;
   height: 100%;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   opacity: 1;
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
@@ -143,31 +149,94 @@ body {
 .nav-links h3 {
   padding: 2rem 0;
 }
-.contatct {
+.contact {
   flex-basis: 30rem;
+  text-align: center;
 }
 
 .contact h2 {
-  font-size: 4rem;
-  padding: 2rem 0;
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
 }
 
-/* .reveal-image,
+.reveal-image,
 .reveal-text {
   position: absolute;
 
-  width: 100%;
-  height: 100%;
-  background: #484545;
-  left: 0;
+  z-index: 1;
+
   top: 0;
-}  */
+  left: 0;
+
+  width: 110%;
+  height: 130%;
+
+  background-color: #484545;
+}
 
 .cursor {
   position: absolute;
-
-  width: 3rem;
-  height: 3rem;
+  padding: 2rem 2rem;
   border: 1px solid white;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  z-index: -1;
+
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 85% 85%;
+}
+
+.cursor.nav-active {
+  background-color: #ebe3d6;
+  transform: scale(2);
+}
+
+.cursor.explore-active {
+  background-color: white;
+  transform: scale(2);
+}
+
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  position: relative;
+  overflow: hidden;
+}
+
+.title-swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  mix-blend-mode: darken;
+  transform: translateY(100%);
+}
+
+.t-swipe1 {
+  background-color: #ebe3d6;
+}
+
+.t-swipe2 {
+  background-color: #e1caf1;
+}
+
+.t-swipe3 {
+  background-color: #f8d6d3;
+}
+
+body.hide {
+  overflow: hidden;
+}
+.scrollmagic-pin-spacer {
+  position: static !important; /*unclickable*/
 }

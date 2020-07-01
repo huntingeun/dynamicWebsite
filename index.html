@@ -15,14 +15,14 @@
       content="https://color-picker-1.netlify.app/images/color_picker_sharing_image.png/"
     /> -->
     <title>Dynamic Website</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style2.css" />
     <!-- <link
       rel="icon"
       type="image/png"
       href="https://color-picker-1.netlify.app/images/color_picker_favicon.png/"
     /> -->
   </head>
-  <body>
+  <body data-barba="wrapper">
     <header class="nav-header">
       <h1><a href="./index.html" id="logo">days.</a></h1>
       <div class="burger">
@@ -31,7 +31,7 @@
       </div>
     </header>
 
-    <main>
+    <main data-barba="container" data-barba-namespace="home">
       <section class="mountain slide">
         <div class="hero-image">
           <img src="./images/forest.png" alt="forest image" />
@@ -45,10 +45,8 @@
             <div class="title-swipe t-swipe1"></div>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            molestiae, cum perferendis dolorem consequuntur recusandae laborum
-            quibusdam, dicta rem architecto soluta dignissimos dolorum fugiat
-            atque iste repellat nam expedita. 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit
+            iusto, optio maiores sequi.
           </p>
           <a class="explore mountain-exp">Explore</a>
           <div class="reveal-text"></div>
@@ -67,8 +65,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
             molestiae, cum perferendis dolorem consequuntur recusandae laborum
-            quibusdam, dicta rem architecto soluta dignissimos dolorum fugiat
-            atque iste repellat nam expedita. 
+            quibusdam.
           </p>
           <a class="explore hike-exp">Explore</a>
           <div class="reveal-text"></div>
@@ -89,8 +86,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
             molestiae, cum perferendis dolorem consequuntur recusandae laborum
-            quibusdam, dicta rem architecto soluta dignissimos dolorum fugiat
-            atque iste repellat nam expedita. 
+            quibusdam.
           </p>
           <a class="explore fashion-exp">Explore</a>
           <div class="reveal-text"></div>
@@ -107,10 +103,7 @@
       <div class="contact">
         <h2>Stay in touch!</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-          excepturi perferendis mollitia explicabo voluptatem quo temporibus
-          possimus, itaque qui reiciendis, similique consequatur repudiandae.
-          Quaerat aspernatur, quis totam labore voluptate dolores.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </div>
     </nav>
@@ -123,6 +116,10 @@
     <div class="swipe swipe2"></div>
     <div class="swipe swipe3"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

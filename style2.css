@@ -90,17 +90,17 @@ body {
 }
 
 .mountain-span {
-  color: #ebe3d6;
+  color: #fadcc6;
   font-family: "Abril Fatface", sans-serif;
 }
 
 .hike-span {
-  color: #e1caf1;
+  color: #b0e4ea;
   font-family: "Abril Fatface", sans-serif;
 }
 
 .fashion-span {
-  color: #f8d6d3;
+  color: #fadcc6;
   font-family: "Abril Fatface", sans-serif;
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .cursor.nav-active {
-  background-color: #ebe3d6;
+  background-color: #fadcc6; 
   transform: scale(2);
 }
 
@@ -223,20 +223,92 @@ body {
 }
 
 .t-swipe1 {
-  background-color: #ebe3d6;
+  background-color: #fadcc6;
 }
 
 .t-swipe2 {
-  background-color: #e1caf1;
+  background-color: #b0e4ea;
 }
 
 .t-swipe3 {
-  background-color: #f8d6d3;
+  background-color: #88e2cf;
 }
 
 body.hide {
   overflow: hidden;
 }
+
 .scrollmagic-pin-spacer {
   position: static !important; /*unclickable*/
+}
+
+/*Fashion Page*/
+
+.fashion1,
+.fashion2,
+.fashion3 {
+  position: relative;
+
+  min-height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 3rem;
+
+  flex-wrap: wrap;
+}
+
+.fashion-image {
+  height: 80vh;
+  flex-basis: 30rem;
+}
+
+.fashion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fashion-text {
+  position: relative;
+
+  padding-left: 3rem;
+  flex-basis: 25rem;
+  flex: 1;
+}
+
+.fashion-text h1 {
+  font-size: 3rem;
+  padding: 2rem 0rem;
+}
+
+.fashion1 h1 {
+  color: #fadcc6;
+}
+
+.fashion2 h1 {
+  color: #b0e4ea;
+}
+
+.fashion3 h1 {
+  color: #88e2cf;
+}
+
+.fashion-text p {
+  font-size: 1rem;
+  padding: 0rem 1rem 0 0;
+  margin-bottom: 5rem;
+}
+
+.fashion-nr {
+  position: absolute;
+
+  font-size: 10rem;
+  left: 50%;
+  bottom: 10%;
+  color: white;
+  opacity: 0.6;
 }

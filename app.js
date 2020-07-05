@@ -23,6 +23,11 @@
 //it keeps track of movement of the screen - controller
 //gsap, scrollmagic
 
+let controller;
+let slideScene;
+let pageScene;
+let detailScene;
+
 function animateSlides() {
   controller = new ScrollMagic.Controller();
 
@@ -126,16 +131,37 @@ function navToggle(e) {
   }
 }
 
+function detailAnimation() {
+  controller = new ScrollMagic.Controller();
+  const slides = document.querySelectorAll(".detail-slide");
+  slides.forEach((slide, index, slides) => {
+    const slideTl = gsap.timeline({ defaults: { duration: 1 } });
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+    const nextImg = nextSlide.querySelector("img");
+    slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+    slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, "-=0.5");
+    slideTl.fromTo(nextImg, { x: "20%" }, { x: "0%" });
+
+    detailScene = new ScrollMagic.Scene({
+      triggerElement: slide,
+      duration: "100%",
+      triggerHook: 0,
+    })
+      .setPin(slide, { pushFollowers: false })
+      .setTween(slideTl)
+      .addIndicators({ colorStart: "white", colorTrigger: "white" })
+      .addTo(controller);
+  });
+}
+
+//Event Listeners
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
 burger.addEventListener("click", navToggle);
 
 function init() {
-  let controller;
-  let slideScene;
-  let pageScene;
-
   animateSlides();
+  detailAnimation();
 }
 
 init();
